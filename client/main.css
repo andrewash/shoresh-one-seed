@@ -1,1 +1,60 @@
-/* CSS declarations go here */
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    top: -28px;  /* HACK */
+}
+
+#render-target {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: gold;
+    margin: auto;
+}
+
+.tally-sheet {
+    width: 50%;
+    height: 100%;
+    background: palegreen;
+    float: left;
+}
+
+.last-planting {
+    margin-left: 50%;
+    background: lightskyblue;
+    position: relative;
+    top: 15%;
+    height: 70%;
+}
+
+.last-planting h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.last-planting .illustration {
+    width: 16em;
+    height: 16em;
+    display: block;
+    margin: 0 auto;
+}
+
+.last-planting .varietal {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.last-planting .description {
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+}
