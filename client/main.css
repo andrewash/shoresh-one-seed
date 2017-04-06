@@ -16,7 +16,7 @@ body {
 .container {
     width: 100%;
     height: 100%;
-    background: gold;
+    background: lightskyblue;
     margin: auto;
 }
 
@@ -31,8 +31,8 @@ body {
     margin-left: 50%;
     background: lightskyblue;
     position: relative;
-    top: 15%;
-    height: 70%;
+    top: 10%;
+    height: 90%;
 }
 
 .last-planting h1 {
