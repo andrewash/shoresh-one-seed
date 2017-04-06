@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import { Plantings } from '../api/plantings.js';
+import { Plantings } from '../../api/plantings.js';
 
-import TallySheet from './TallySheet.jsx';
-import LastPlanting from './LastPlanting.jsx';
+import TallySheet from '../TallySheet.jsx';
+import LastPlanting from '../LastPlanting.jsx';
 
 // App component - represents the whole app
 class App extends Component {

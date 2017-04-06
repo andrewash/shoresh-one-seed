@@ -1,9 +1,19 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { render } from 'react-dom';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { mount } from 'react-mounter';
 
-import App from '../imports/ui/App.jsx';
+import AppContainer from '../imports/ui/containers/AppContainer.jsx';
+import AdminContainer from '../imports/ui/containers/AdminContainer.jsx';
+FlowRouter.route('/', {
+  name: 'Display',
+  action() {
+    mount(AppContainer);
+  }
+});
 
-Meteor.startup(() => {
-  render(<App />, document.getElementById('render-target'));
+FlowRouter.route('/admin', {
+  name: 'Admin',
+  action() {
+    mount(AdminContainer);
+  }
 });
