@@ -1,17 +1,41 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
+
+import { Plantings } from '../api/plantings.js';
 
 import TallySheet from './TallySheet.jsx';
 import LastPlanting from './LastPlanting.jsx';
 
 // App component - represents the whole app
-export default class App extends Component {
+class App extends Component {
   render() {
-    return (
-      <div className="container">
-        <TallySheet count={3} />
-        <LastPlanting volunteer="Peter" imageUrl="/tomato-large.png" varietal="Tomato" description="The tomato (see pronunciation) is the edible fruit of Solanum lycopersicum, commonly known as a tomato plant, which belongs to the nightshade family, Solanaceae.
-The species originated in Central and South America. The Nahuatl (Aztec language) word tomatl gave rise to the Spanish word 'tomate', from which the English word tomato originates."/>
-      </div>
-    );
+    if (this.props.lastPlanting !== undefined) {
+      return (
+        <div className="container">
+          <TallySheet count={3}/>
+          <LastPlanting volunteer={this.props.lastPlanting.volunteerName}
+                        imageUrl={this.props.lastPlanting.varietalImageUrl}
+                        varietal={this.props.lastPlanting.varietalName}
+                        description={this.props.lastPlanting.varietalDescription}/>
+        </div>
+      );
+    } else {
+      return (
+        <div className="container">
+          Loading...
+        </div>
+      )
+    }
   }
 }
+
+App.propTypes = {
+  lastPlanting: PropTypes.object
+};
+
+export default createContainer(() => {
+  // Show only the most recent planting
+  return {
+    lastPlanting: Plantings.findOne({}, { sort: { createdAt: -1 } })
+  };
+}, App);
