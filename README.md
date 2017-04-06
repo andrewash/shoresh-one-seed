@@ -6,3 +6,10 @@ A presentation for JEDX
 Created by Andrew Ash
 
 Built on Meteor 1.4
+
+# Getting Started
+
+```
+ meteor npm install
+ meteor
+```
