@@ -12,7 +12,7 @@ class App extends Component {
     if (this.props.lastPlanting !== undefined) {
       return (
         <div className="container">
-          <TallySheet count={3}/>
+          <TallySheet count={this.props.count}/>
           <LastPlanting volunteer={this.props.lastPlanting.volunteerName}
                         imageUrl={this.props.lastPlanting.varietalImageUrl}
                         varietal={this.props.lastPlanting.varietalName}
@@ -30,12 +30,14 @@ class App extends Component {
 }
 
 App.propTypes = {
-  lastPlanting: PropTypes.object
+  lastPlanting: PropTypes.object,
+  count: PropTypes.number
 };
 
 export default createContainer(() => {
-  Meteor.subscribe('lastPlanting');
+  Meteor.subscribe('plantings');
   return {
-    lastPlanting: Plantings.findOne({})
+    lastPlanting: Plantings.findOne({}, { sort: { createdAt: -1 }}),
+    count: Plantings.find({}).count()
   };
 }, App);

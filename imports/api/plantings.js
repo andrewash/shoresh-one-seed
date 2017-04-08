@@ -8,8 +8,8 @@ export const Plantings = new Mongo.Collection('plantings');
 
 if (Meteor.isServer) {
   // publish the last planting (but not all the previous ones)
-  Meteor.publish('lastPlanting', () => {
-    return Plantings.find({}, { sort: { createdAt: -1 }, limit: 1 } );
+  Meteor.publish('plantings', () => {
+    return Plantings.find({});
   });
 }
 
