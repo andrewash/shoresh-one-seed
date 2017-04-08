@@ -34,8 +34,8 @@ App.propTypes = {
 };
 
 export default createContainer(() => {
-  // Show only the most recent planting
+  Meteor.subscribe('lastPlanting');
   return {
-    lastPlanting: Plantings.findOne({}, { sort: { createdAt: -1 } })
+    lastPlanting: Plantings.findOne({})
   };
 }, App);

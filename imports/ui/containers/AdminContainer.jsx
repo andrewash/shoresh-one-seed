@@ -10,7 +10,7 @@ import SeedButton from '../../ui/SeedButton.jsx';
 class Counter extends Component {
   renderVarietals() {
     return this.props.varietals.map((varietal) => (
-      <SeedButton key={varietal._id} name={varietal.name} imageUrl={varietal.imageUrl} />
+      <SeedButton key={varietal._id} volunteerName="Jamie Springer" varietalId={varietal._id} name={varietal.name} imageUrl={varietal.imageUrl} />
     ));
   }
 
@@ -37,7 +37,7 @@ Counter.propTypes = {
 };
 
 export default createContainer(() => {
-  // Show only the most recent planting
+  Meteor.subscribe('varietals');
   return {
     varietals: Varietals.find({}, { sort: { "_id": 1 } }).fetch()
   };
