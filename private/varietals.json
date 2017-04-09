@@ -3,27 +3,27 @@
           [
             {
               "_id": "1",
-              "name": "Tomato",
-              "imageUrl": "/tomato-large.png",
-              "description": "The tomato (see pronunciation) is the edible fruit of Solanum lycopersicum, commonly known as a tomato plant, which belongs to the nightshade family, Solanaceae.      The species originated in Central and South America. The Nahuatl (Aztec language) word tomatl gave rise to the Spanish word 'tomate', from which the English word tomato originates."
+              "name": "Milkweed",
+              "imageUrl": "/milkweed-large.png",
+              "description": "One milkweed seed can become a habitat for monarch butterflies at Bela Farm."
             },
             {
               "_id": "2",
-              "name": "Sunflower",
-              "imageUrl": "/sunflower-large.png",
-              "description": "The sunflower is pretty. Israelis love 'em!"
+              "name": "Lettuce",
+              "imageUrl": "/lettuce-large.png",
+              "description": "One lettuce seed can provide 2 week’s worth of salad greens for JF & CS gardeners at Maxie’s Garden in Kensington Market."
             },
             {
               "_id": "3",
-              "name": "Grapefruit",
-              "imageUrl": "/grapefruit-large.png",
-              "description": "Silly Andrew, the grapefruit doesn't grow in Toronto."
+              "name": "Beet",
+              "imageUrl": "/beet-large.png",
+              "description": "One beet seed grown at the Kavanah Garden will  add a nutritious boost to hungry community members  borscht  through our partnership with Chasdei Kaduri."
             },
             {
               "_id": "4",
-              "name": "Butterfly Bush",
-              "imageUrl": "/butterfly-bush-large.png",
-              "description": "Butterfly Bush attracts many butterflies"
+              "name": "Sunflower",
+              "imageUrl": "/sunflower-large.png",
+              "description": "One sunflower seed can feed thousands of our honey bees at Bela Farm or provide added beauty at a community member’s Shabbat table."
             }
           ]
 }

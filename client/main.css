@@ -20,6 +20,17 @@ body {
     margin: auto;
 }
 
+.title {
+    height: 100px;
+}
+
+.title h1 {
+    text-align: center;
+    padding-top: 18px;
+    font-size: 48px;
+
+}
+
 .tally-sheet {
     width: 50%;
     height: 100%;

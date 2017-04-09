@@ -12,6 +12,7 @@ class App extends Component {
     if (this.props.lastPlanting !== undefined) {
       return (
         <div className="container">
+          <div className="title"><h1>The Power of One Seed</h1></div>
           <TallySheet count={this.props.count}/>
           <LastPlanting volunteer={this.props.lastPlanting.volunteerName}
                         imageUrl={this.props.lastPlanting.varietalImageUrl}
