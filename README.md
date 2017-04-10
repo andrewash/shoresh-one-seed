@@ -26,3 +26,8 @@ shoresh.meteorapp.com
 
 Visit https://galaxy.meteor.com/app/shoresh.meteorapp.com to check the status
 of your app.
+
+Deploy using
+```
+meteor deploy shoresh.meteorapp.com --settings settings.json
+```
