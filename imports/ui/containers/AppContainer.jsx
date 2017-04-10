@@ -23,9 +23,10 @@ class App extends Component {
     } else {
       return (
         <div className="container">
-          Loading...
+          <div className="title"><h1>The Power of One Seed</h1></div>
+          <TallySheet count={this.props.count}/>
         </div>
-      )
+      );
     }
   }
 }
