@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 
 export default class SeedButton extends Component {
-  newPlanting() {
-    Meteor.call('plantings.insert', this.props.volunteerName, this.props.varietalId);
+  newPlanting(event) {
+    event.preventDefault();
+    this.props.submitHandler(this.props.varietalId);
   }
 
   render() {
@@ -15,8 +16,8 @@ export default class SeedButton extends Component {
 }
 
 SeedButton.propTypes = {
-  volunteerName: PropTypes.string,
   varietalId: PropTypes.string,
   name: PropTypes.string,
-  imageUrl: PropTypes.string
+  imageUrl: PropTypes.string,
+  submitHandler: PropTypes.func
 };
