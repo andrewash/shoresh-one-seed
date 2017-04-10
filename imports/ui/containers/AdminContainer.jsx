@@ -30,6 +30,10 @@ class Counter extends Component {
     ReactDOM.findDOMNode(myCounter.refs.volunteerNameInput).value = '';
   }
 
+  handleUndo() {
+    Meteor.call('plantings.undo');
+  }
+
   render() {
     if (this.props.varietals !== undefined) {
       return (
@@ -44,6 +48,7 @@ class Counter extends Component {
             <h1>Choose One</h1>
             { this.renderVarietals() }
           </form>
+          <button onClick={this.handleUndo.bind(this)}>Undo</button>
         </div>
       );
     } else {

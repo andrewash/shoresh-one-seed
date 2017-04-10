@@ -31,6 +31,14 @@ Meteor.methods({
     } else {
       console.log(`Error: Could not create planting because varietalId ${varietalId} was not found`);
     }
-
+  },
+  'plantings.undo'() {
+    // Delete the most recent planting record (i.e. in case it was created by accident)
+    const lastPlanting = Plantings.findOne({}, {sort: {"_id": -1}});
+    if (!lastPlanting) {
+      console.log(`Error: Could not locate last planting record`);
+    }
+    const result = Plantings.remove(lastPlanting._id);
+    console.log(`Undo removed ${result} records`);
   }
-})
+});
