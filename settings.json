@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://meteor:oGXwarJXaQf2PUwUcDnXFcXt@ds157740.mlab.com:57740/shoresh-one-seed"
+    }
+  }
+}
