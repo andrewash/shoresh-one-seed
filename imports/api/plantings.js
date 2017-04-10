@@ -22,7 +22,7 @@ Meteor.methods({
     const varietal = Varietals.findOne({_id: varietalId});
     if (varietal) {
       Plantings.insert({
-        volunteerName: volunteerName,
+        volunteerName: volunteerName || "Just",
         varietalName: varietal.name,
         varietalImageUrl: varietal.imageUrl,
         varietalDescription: varietal.description,
