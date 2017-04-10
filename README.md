@@ -7,6 +7,10 @@ Created by Andrew Ash
 
 Built on Meteor 1.4
 
+# TODO
+
+* visual treatment 
+
 # Getting Started
 
 ```
