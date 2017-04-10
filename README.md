@@ -9,6 +9,7 @@ Built on Meteor 1.4
 
 # TODO
 
+* security: What if someone guesses the /admin URL? Make it less easy to hack, or run locally on Jared's computer
 * visual treatment 
 
 # Getting Started
