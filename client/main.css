@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Catull';
+    src: url('fonts/Catull.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hockey is Lif';
+    src: url('fonts/Hockey-Is-Life.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     position: absolute;
     height: 100%;
@@ -27,7 +41,7 @@ body {
     text-align: center;
     padding-top: 18px;
     font-size: 48px;
-
+    font-family: 'Catull', Arial, sans-serif;
 }
 
 .tally-sheet {
