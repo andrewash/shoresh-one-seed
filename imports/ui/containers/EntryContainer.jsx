@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import { Varietals } from '../../api/varietals.js';
@@ -24,6 +25,7 @@ class Counter extends Component {
 
   handleSubmit(varietalId) {
     Meteor.call('plantings.insert', varietalId);
+    FlowRouter.go("Display");
   }
 
   handleUndo() {

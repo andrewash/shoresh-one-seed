@@ -8,10 +8,14 @@ import LastPlanting from '../LastPlanting.jsx';
 
 // App component - represents the whole app
 class App extends Component {
+  nextEntry() {
+    FlowRouter.go("Entry");
+  }
+
   render() {
     if (this.props.lastPlanting !== undefined) {
       return (
-        <div className="container">
+        <div className="container" onClick={this.nextEntry.bind(this)}>
           <div className="title"><h1>The Power of One Seed</h1></div>
           <TallySheet count={this.props.count}/>
           <LastPlanting imageUrl={this.props.lastPlanting.varietalImageUrl}
@@ -21,7 +25,7 @@ class App extends Component {
       );
     } else {
       return (
-        <div className="container">
+        <div className="container" onClick={this.nextEntry.bind(this)}>
           <div className="title"><h1>The Power of One Seed</h1></div>
           <TallySheet count={this.props.count}/>
         </div>

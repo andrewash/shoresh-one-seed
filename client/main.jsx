@@ -2,18 +2,18 @@ import React from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { mount } from 'react-mounter';
 
-import AppContainer from '../imports/ui/containers/AppContainer.jsx';
-import AdminContainer from '../imports/ui/containers/AdminContainer.jsx';
+import DisplayContainer from '../imports/ui/containers/DisplayContainer.jsx';
+import EntryContainer from '../imports/ui/containers/EntryContainer.jsx';
 FlowRouter.route('/', {
-  name: 'Display',
+  name: 'Entry',
   action() {
-    mount(AppContainer);
+    mount(EntryContainer);
   }
 });
 
-FlowRouter.route('/admin', {
-  name: 'Admin',
+FlowRouter.route('/seedling', {
+  name: 'Display',
   action() {
-    mount(AdminContainer);
+    mount(DisplayContainer);
   }
 });
