@@ -11,6 +11,7 @@ Built on Meteor 1.4
 * visual treatment 
 
 # Requirements
+* Google Chrome for Mac (probably Safari is fine too)
 * TV or external monitor set to 1920 x 1080 (HD 1080p), or 1920 x 1200 resolution
 
 # Guide for Jared and Shoresh Staff
