@@ -30,6 +30,7 @@ class Counter extends Component {
 
   handleUndo() {
     Meteor.call('plantings.undo');
+    alert("undo removed a record");
   }
 
   render() {
