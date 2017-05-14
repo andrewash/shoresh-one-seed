@@ -35,17 +35,18 @@ class Counter extends Component {
   render() {
     if (this.props.varietals !== undefined) {
       return (
-        <div className="container">
+        <div className="entry">
+          <img className="logo" src="logo-circle.png" />
           <form className="new-planting" onSubmit={this.handleSubmit.bind(this)} >
-            <h1>Choose One</h1>
+            <h1>What kind of seed would you like to plant?</h1>
             { this.renderVarietals() }
           </form>
-          <button onClick={this.handleUndo.bind(this)}>Undo</button>
+          <button className="undo" onClick={this.handleUndo.bind(this)}>Undo</button>
         </div>
       );
     } else {
       return (
-        <div className="container">
+        <div className="entry">
           Loading...
         </div>
       )

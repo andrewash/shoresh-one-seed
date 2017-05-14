@@ -11,32 +11,32 @@ if (Meteor.isServer) {
   Meteor.publish('plantings', () => {
     return Plantings.find({});
   });
+
+  Meteor.methods({
+    'plantings.insert'(varietalId) {
+      check(varietalId, String);
+
+      // Lookup varietal info to de-normalize data
+      const varietal = Varietals.findOne({_id: varietalId});
+      if (varietal) {
+        Plantings.insert({
+          varietalName: varietal.name,
+          varietalImageUrl: varietal.imageUrl,
+          varietalDescription: varietal.description,
+          createdAt: new Date()
+        });
+      } else {
+        console.log(`Error: Could not create planting because varietalId ${varietalId} was not found`);
+      }
+    },
+    'plantings.undo'() {
+      // Delete the most recent planting record (i.e. in case it was created by accident)
+      const lastPlanting = Plantings.findOne({}, {sort: {createdAt: -1}});
+      if (!lastPlanting) {
+        console.log(`Error: Could not locate last planting record`);
+      }
+      const result = Plantings.remove(lastPlanting._id);
+      console.log(`Undo removed ${result} records`);
+    }
+  });
 }
-
-Meteor.methods({
-  'plantings.insert'(varietalId) {
-    check(varietalId, String);
-
-    // Lookup varietal info to de-normalize data
-    const varietal = Varietals.findOne({_id: varietalId});
-    if (varietal) {
-      Plantings.insert({
-        varietalName: varietal.name,
-        varietalImageUrl: varietal.imageUrl,
-        varietalDescription: varietal.description,
-        createdAt: new Date()
-      });
-    } else {
-      console.log(`Error: Could not create planting because varietalId ${varietalId} was not found`);
-    }
-  },
-  'plantings.undo'() {
-    // Delete the most recent planting record (i.e. in case it was created by accident)
-    const lastPlanting = Plantings.findOne({}, {sort: {"_id": -1}});
-    if (!lastPlanting) {
-      console.log(`Error: Could not locate last planting record`);
-    }
-    const result = Plantings.remove(lastPlanting._id);
-    console.log(`Undo removed ${result} records`);
-  }
-});

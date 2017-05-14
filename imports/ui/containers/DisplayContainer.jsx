@@ -3,7 +3,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 import { Plantings } from '../../api/plantings.js';
 
-import TallySheet from '../TallySheet.jsx';
+import Counter from '../Counter.jsx';
 import LastPlanting from '../LastPlanting.jsx';
 
 // App component - represents the whole app
@@ -15,9 +15,8 @@ class App extends Component {
   render() {
     if (this.props.lastPlanting !== undefined) {
       return (
-        <div className="container" onClick={this.nextEntry.bind(this)}>
-          <div className="title"><h1>The Power of One Seed</h1></div>
-          <TallySheet count={this.props.count}/>
+        <div className="display" onClick={this.nextEntry.bind(this)}>
+          <Counter count={this.props.count}/>
           <LastPlanting imageUrl={this.props.lastPlanting.varietalImageUrl}
                         varietal={this.props.lastPlanting.varietalName}
                         description={this.props.lastPlanting.varietalDescription}/>
@@ -25,9 +24,8 @@ class App extends Component {
       );
     } else {
       return (
-        <div className="container" onClick={this.nextEntry.bind(this)}>
-          <div className="title"><h1>The Power of One Seed</h1></div>
-          <TallySheet count={this.props.count}/>
+        <div className="display" onClick={this.nextEntry.bind(this)}>
+          <Counter count={this.props.count}/>
         </div>
       );
     }

@@ -9,7 +9,7 @@ export default class SeedButton extends Component {
   render() {
     return (
       <div className="seed-button">
-        <button id={this.props.varietalId} onClick={this.newPlanting.bind(this)}>{this.props.name}</button>
+        <a id={this.props.varietalId} onClick={this.newPlanting.bind(this)}>{this.props.name}</a>
       </div>
     );
   }
