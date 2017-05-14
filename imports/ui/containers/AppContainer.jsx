@@ -14,8 +14,7 @@ class App extends Component {
         <div className="container">
           <div className="title"><h1>The Power of One Seed</h1></div>
           <TallySheet count={this.props.count}/>
-          <LastPlanting volunteer={this.props.lastPlanting.volunteerName}
-                        imageUrl={this.props.lastPlanting.varietalImageUrl}
+          <LastPlanting imageUrl={this.props.lastPlanting.varietalImageUrl}
                         varietal={this.props.lastPlanting.varietalName}
                         description={this.props.lastPlanting.varietalDescription}/>
         </div>

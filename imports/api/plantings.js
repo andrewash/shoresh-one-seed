@@ -14,15 +14,13 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'plantings.insert'(volunteerName, varietalId) {
-    check(volunteerName, String);
+  'plantings.insert'(varietalId) {
     check(varietalId, String);
 
     // Lookup varietal info to de-normalize data
     const varietal = Varietals.findOne({_id: varietalId});
     if (varietal) {
       Plantings.insert({
-        volunteerName: volunteerName || "Just",
         varietalName: varietal.name,
         varietalImageUrl: varietal.imageUrl,
         varietalDescription: varietal.description,

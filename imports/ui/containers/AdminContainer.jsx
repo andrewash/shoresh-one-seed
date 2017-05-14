@@ -23,11 +23,7 @@ class Counter extends Component {
   }
 
   handleSubmit(varietalId) {
-    const volunteerName = ReactDOM.findDOMNode(myCounter.refs.volunteerNameInput).value.trim();
-    Meteor.call('plantings.insert', volunteerName, varietalId);
-
-    // Clear form
-    ReactDOM.findDOMNode(myCounter.refs.volunteerNameInput).value = '';
+    Meteor.call('plantings.insert', varietalId);
   }
 
   handleUndo() {
@@ -39,12 +35,6 @@ class Counter extends Component {
       return (
         <div className="container">
           <form className="new-planting" onSubmit={this.handleSubmit.bind(this)} >
-            <label>Volunteer:</label>
-            <input
-              type="text"
-              ref="volunteerNameInput"
-              placeholder="Type their name"
-            />
             <h1>Choose One</h1>
             { this.renderVarietals() }
           </form>

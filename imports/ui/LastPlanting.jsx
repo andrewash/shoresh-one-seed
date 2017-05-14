@@ -5,7 +5,7 @@ export default class LastPlanting extends Component {
   render() {
     return (
       <div className="last-planting">
-        <h1>{this.props.volunteer} planted:</h1>
+        <h1>You planted:</h1>
         <img className="illustration" src={this.props.imageUrl} />
         <div className="varietal">{this.props.varietal}</div>
         <div className="description">{this.props.description}</div>
@@ -15,7 +15,6 @@ export default class LastPlanting extends Component {
 }
 
 LastPlanting.propTypes = {
-  volunteer: PropTypes.string,
   imageUrl: PropTypes.string.isRequired,
   varietal: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired
