@@ -40,7 +40,9 @@ class Counter extends Component {
           <img className="logo" src="logo-circle.png" />
           <form className="new-planting" onSubmit={this.handleSubmit.bind(this)} >
             <h1>What kind of seed would you like to plant?</h1>
-            { this.renderVarietals() }
+            <div className="button-bar">
+              { this.renderVarietals() }
+            </div>
           </form>
           <button className="undo" onClick={this.handleUndo.bind(this)}>Undo</button>
         </div>
