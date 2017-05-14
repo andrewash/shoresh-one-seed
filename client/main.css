@@ -98,6 +98,7 @@ body {
     margin: 0 11px;
     text-align: center;
     line-height: 113px;     /* 100px in theory, but hack needed to get it perfectly centered b/c of font */
+    cursor: pointer;
 }
 
 .entry .button-bar .seed-button a {
@@ -105,6 +106,7 @@ body {
     font-size: 60px;
     text-transform: uppercase;
     color: white;
+    cursor: pointer;
 }
 
 .display {
