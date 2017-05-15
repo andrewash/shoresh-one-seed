@@ -5,9 +5,10 @@ export default class LastPlanting extends Component {
   render() {
     return (
       <div className="last-planting">
-        <h1>You planted:</h1>
+        <h1>Way to go!</h1>
+        <div className="varietal">You planted a {this.props.varietal} Seed</div>
         <img className="illustration" src={this.props.imageUrl} />
-        <div className="varietal">{this.props.varietal}</div>
+
         <div className="description">{this.props.description}</div>
       </div>
     );

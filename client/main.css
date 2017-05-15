@@ -32,6 +32,8 @@ body {
     transform: translate(-50%, -50%);
 }
 
+/* Part 1: Entry */
+
 .entry {
     position: absolute;
     width: 100%;
@@ -109,46 +111,67 @@ body {
     cursor: pointer;
 }
 
+/* Part 2: The Display */
+
 .display {
     position: absolute;
     width: 100%;
     height: 100%;
+    display: flex;
 }
 
-.counter {
-    width: 50%;
-    height: 100%;
-    background: palegreen;
-    float: left;
+.display .counter {
+    background: white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.last-planting {
-    margin-left: 50%;
-    background: lightskyblue;
+.display .last-planting {
+    background: #74920D;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.display .last-planting h1 {
     position: relative;
-    height: 100%;
-}
-
-.last-planting h1 {
-    font-size: 3em;
+    margin: 0;
+    top: 45px;
+    font-family: 'Hockey is Lif', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 113px;
+    color: white;
     text-align: center;
 }
 
-.last-planting .illustration {
-    width: 16em;
-    height: 16em;
-    display: block;
+.display .last-planting .varietal {
+    position: relative;
+    margin: 0;
+    top: 55px;
+    font-family: Catull, Arial, sans-serif;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+
+.display .last-planting .illustration {
+    position: relative;
+    top: 110px;
+    width: 525px;
+    height: 525px;
     margin: 0 auto;
 }
 
-.last-planting .varietal {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-}
-
-.last-planting .description {
+.display .last-planting .description {
+    position: relative;
+    top: 170px;
+    font-family: Catull, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 37px;
     text-align: center;
     width: 80%;
     margin: 10px auto;
+    color: white;
 }
